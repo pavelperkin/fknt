@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    models:
+    attributes:
+      tag:
+        su: 'Самоуправление'
+        decanat: 'Деканат'
+        prof: 'Профком'

@@ -1,0 +1,16 @@
+<ul>
+  <% @articles.each do |article| %>
+  <li>
+   <%= image_tag article.img_url, :style => 'height: 120px' %>
+   <span><%= article.tag_id %></span>
+   <h3><%= article.header %></h3>
+   <p><%= article.preview %></p>
+  </li>
+  <% end %>
+  
+
+</ul>
+
+<hr/>
+
+<%= link_to 'New Article', new_article_path %>
