@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504070357) do
+ActiveRecord::Schema.define(:version => 20130511124537) do
 
   create_table "articles", :force => true do |t|
     t.string   "header"
@@ -21,6 +21,49 @@ ActiveRecord::Schema.define(:version => 20130504070357) do
     t.integer  "tag_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.integer  "course"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "schedule_types", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "schedules", :force => true do |t|
+    t.string   "mon_1"
+    t.string   "mon_2"
+    t.string   "mon_3"
+    t.string   "mon_4"
+    t.string   "mon_5"
+    t.string   "tue_1"
+    t.string   "tue_2"
+    t.string   "tue_3"
+    t.string   "tue_4"
+    t.string   "tue_5"
+    t.string   "wed_1"
+    t.string   "wed_2"
+    t.string   "wed_3"
+    t.string   "wed_4"
+    t.string   "wed_5"
+    t.string   "thu_1"
+    t.string   "thu_2"
+    t.string   "thu_3"
+    t.string   "thu_4"
+    t.string   "thu_5"
+    t.string   "fri_1"
+    t.string   "fri_2"
+    t.string   "fri_3"
+    t.string   "fri_4"
+    t.string   "fri_5"
+    t.integer  "group_id"
+    t.integer  "schedule_type_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "tags", :force => true do |t|

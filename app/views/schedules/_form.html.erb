@@ -1,0 +1,125 @@
+<%= form_for(@schedule) do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :group_id %><br />
+    <%= f.number_field :group_id %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule_type_id %><br />
+    <%= f.select :schedule_type_id, options_for_select(ScheduleType.all.collect{ |x| [x.name, x.id] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :mon_1 %><br />
+    <%= f.text_field :mon_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :mon_2 %><br />
+    <%= f.text_field :mon_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :mon_3 %><br />
+    <%= f.text_field :mon_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :mon_4 %><br />
+    <%= f.text_field :mon_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :mon_5 %><br />
+    <%= f.text_field :mon_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :tue_1 %><br />
+    <%= f.text_field :tue_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tue_2 %><br />
+    <%= f.text_field :tue_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :tue_3 %><br />
+    <%= f.text_field :tue_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :tue_4 %><br />
+    <%= f.text_field :tue_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :tue_5 %><br />
+    <%= f.text_field :tue_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :wed_1 %><br />
+    <%= f.text_field :wed_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :wed_2 %><br />
+    <%= f.text_field :wed_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :wed_3 %><br />
+    <%= f.text_field :wed_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :wed_4 %><br />
+    <%= f.text_field :wed_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :wed_5 %><br />
+    <%= f.text_field :wed_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :thu_1 %><br />
+    <%= f.text_field :thu_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :thu_2 %><br />
+    <%= f.text_field :thu_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :thu_3 %><br />
+    <%= f.text_field :thu_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :thu_4 %><br />
+    <%= f.text_field :thu_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :thu_5 %><br />
+    <%= f.text_field :thu_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :fri_1 %><br />
+    <%= f.text_field :fri_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :fri_2 %><br />
+    <%= f.text_field :fri_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :fri_3 %><br />
+    <%= f.text_field :fri_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :fri_4 %><br />
+    <%= f.text_field :fri_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :fri_5 %><br />
+    <%= f.text_field :fri_5 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
