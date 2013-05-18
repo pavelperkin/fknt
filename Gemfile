@@ -2,25 +2,22 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'sqlite3'
-gem 'pg'
 
-# Gems used only for assets and not required
-# in production environments by default.
+gem 'sqlite3'
+# gem 'pg'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'rails-i18n'
 gem 'jquery-rails'
+gem "twitter-bootstrap-rails"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -36,3 +33,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# sudo heroku config:set AWS_ACCESS_KEY_ID=AKIAJUCM24WUGUJ7PEBQ AWS_SECRET_ACCESS_KEY=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

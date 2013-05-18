@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
-  # GET /schedules
-  # GET /schedules.json
+  
+  respond_to :html, :js
+
   def index
     @schedules = Schedule.all
 
@@ -13,12 +14,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
-    @schedule = Schedule.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @schedule }
-    end
+    @schedule = Schedule.find(params[:id])    
   end
 
   # GET /schedules/new
