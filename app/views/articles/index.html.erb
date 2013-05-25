@@ -7,7 +7,7 @@
   	    <p><%= article.preview %></p>
   	  </div>
   	  <br/>
-  	  <span class='pull-right label <%= "label-#{Tag.find(article.tag_id).name}" %>'><%= link_to t("activerecord.attributes.tag.#{Tag.find(article.tag_id).name}"), send("#{Tag.find(article.tag_id).name}_path")  %></p>
+  	  <span class='pull-right label <%= "label-#{Tag.find(article.tag_id).name}" %>'><%= link_to t("activerecord.attributes.tag.#{Tag.find(article.tag_id).name}"), send("#{Tag.find(article.tag_id).name}_path")  %></span>
   	</div>
   <% end %>
 </div>
@@ -16,3 +16,5 @@
 <hr/>
 
 <%= link_to 'New Article', new_article_path %>
+
+

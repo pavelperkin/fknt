@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130519095814) do
+ActiveRecord::Schema.define(:version => 20130525070950) do
 
   create_table "articles", :force => true do |t|
     t.string   "header"
-    t.string   "preview"
+    t.text     "preview",    :limit => 255
     t.text     "main_text"
     t.string   "img_url"
     t.integer  "tag_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "groups", :force => true do |t|

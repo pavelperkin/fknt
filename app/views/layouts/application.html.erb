@@ -21,10 +21,11 @@
     </div>
     <div id="push"></div>
   </div>
-    <div id="footer">
-      <div class="container">
-        <div class="container-fluid">
-          &copy; 2013 fknt.info;
+    <div class="navbar navbar-fixed-bottom">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to 'fknt.info', root_url, :class => 'brand' %>
+          <%= render '/layouts/loginbar' %>
         </div>
       </div>
     </div>

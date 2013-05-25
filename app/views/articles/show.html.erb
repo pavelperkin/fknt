@@ -1,29 +1,23 @@
+<span class='pull-right label <%= "label-#{Tag.find(@article.tag_id).name}" %>'><%= link_to t("activerecord.attributes.tag.#{Tag.find(@article.tag_id).name}"), send("#{Tag.find(@article.tag_id).name}_path")  %></span>
+<h1><%= @article.header %></h1>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Header:</b>
-  <%= @article.header %>
-</p>
-
-<p>
-  <b>Preview:</b>
-  <%= @article.preview %>
-</p>
-
-<p>
-  <b>Main text:</b>
+<p><%= @article.preview %></p>
+<p><span class="pull-left"><%= image_tag @article.img_url, :class => 'img-rounded pull-left', :style => 'margin: 0 5px;' %></span>
   <%= @article.main_text %>
 </p>
 
-<p>
-  <b>Img url:</b>
-  <%= @article.img_url %>
-</p>
+  
 
-<p>
-  <b>Tag name:</b>
+  
+
+
+
+
   <%= @article.tag_id %>
-</p>
+
+
+<%= link_to 'Prev', Article.find(@article.id-1) if @article.id > Article.first.id%> |
+<%= link_to 'Next', Article.find(@article.id+1) if @article.id < Article.last.id %> 
 
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

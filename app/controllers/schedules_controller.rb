@@ -11,10 +11,12 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/1
-  # GET /schedules/1.json
+
   def show
-    @schedule = Schedule.find(params[:id])    
+    #@schedule = Schedule.find(params[:id])
+    # @schedule = Schedule.where(:group_id => current_user.group.id)
+    @schedules = Schedule.where(:group_id => 1)
+
   end
 
   # GET /schedules/new
