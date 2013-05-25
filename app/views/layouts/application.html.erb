@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Fknt</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <title><%=t 'project_name' %></title>
+  </head>
+  <body>
+  <div id="wrap">
+    <div class="navbar navbar-static-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to 'fknt.info', root_url, :class => 'brand' %>
+          <%= render '/layouts/loginbar' %>
+        </div>
+      </div>
+    </div>
+    <div class='content container' style='margin-top: 30px;'>
+      <%= yield %>
+    </div>
+    <div id="push"></div>
+  </div>
+    <div id="footer">
+      <div class="container">
+        <div class="container-fluid">
+          &copy; 2013 100kuptsov.com &#153;
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

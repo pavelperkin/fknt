@@ -3,6 +3,6 @@ ru:
     models:
     attributes:
       tag:
-        su: 'Самоуправление'
+        self_government: 'Самоуправление'
         decanat: 'Деканат'
-        prof: 'Профком'
+        trade_union: 'Профком'

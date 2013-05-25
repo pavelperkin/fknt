@@ -1,4 +1,10 @@
 Fknt::Application.routes.draw do
+  resources :messages
+
+
+  resources :topics
+
+
   resources :groups
   resources :schedules
   resources :days

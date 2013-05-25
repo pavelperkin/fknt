@@ -1,15 +1,17 @@
-<ul>
+<div class="row-fluid">
   <% @articles.each do |article| %>
-  <li>
-   <%= image_tag article.img_url, :style => 'height: 120px' %>
-   <span><%= article.tag_id %></span>
-   <h3><%= article.header %></h3>
-   <p><%= article.preview %></p>
-  </li>
+  	<div class="span4">
+  	  <div style='height: 200px; overflow: hidden'>	
+  	    <h4><%= article.header %></h4>
+  	    <%= image_tag article.img_url, :class => 'img-rounded pull-left', :style => 'margin: 0 5px; width:50%;' %>	
+  	    <p><%= article.preview %></p>
+  	  </div>
+  	  <br/>
+  	  <span class='pull-right label <%= "label-#{Tag.find(article.tag_id).name}" %>'><%= link_to t("activerecord.attributes.tag.#{Tag.find(article.tag_id).name}"), send("#{Tag.find(article.tag_id).name}_path")  %></p>
+  	</div>
   <% end %>
-  
+</div>
 
-</ul>
 
 <hr/>
 

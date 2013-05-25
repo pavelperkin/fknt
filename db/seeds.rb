@@ -5,5 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Tag.create([{name: 'prof'},{name: 'su'},{name: 'decanat'}])
+Tag.create([{name: 'trade_union'},{name: 'self_government'},{name: 'decanat'}])
 ScheduleType.create([{name: 'up'},{name: 'down'}])

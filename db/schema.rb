@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511124537) do
+ActiveRecord::Schema.define(:version => 20130519095814) do
 
   create_table "articles", :force => true do |t|
     t.string   "header"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(:version => 20130511124537) do
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.integer  "course"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -68,6 +76,15 @@ ActiveRecord::Schema.define(:version => 20130511124537) do
 
   create_table "tags", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "topics", :force => true do |t|
+    t.string   "name"
+    t.string   "tag"
+    t.integer  "user_id"
+    t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

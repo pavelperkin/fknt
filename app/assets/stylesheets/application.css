@@ -11,3 +11,79 @@
  *= require_self
  *= require_tree .
  */
+
+html, body {
+  height: 100%;
+  background-color:#f7f7f7 !important;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -40px;
+}
+.content{
+  position: relative;
+}
+
+#push, #footer {
+  height: 40px;
+}
+#footer {
+  background-color: #DDD;
+  line-height: 40px;
+}
+#footer .container a{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+span.label-trade_union {
+  background-color: #3a87ad;
+}
+
+span.label-decanat  {
+  background-color: #468847;
+}
+
+span.label-self_government {
+  background-color: #f89406;
+}
+
+span.label-trade_union a:hover {
+  background-color: #3a87ad;
+}
+
+span.label-decanat a:hover   {
+  background-color: #468847;
+}
+
+span.label-self_government a:hover  {
+  background-color: #f89406;
+}
+
+span.label-trade_union a{
+  color: #fff;
+}
+
+span.label-decanat  a{
+  color: #fff;
+}
+
+span.label-self_government a{
+  color: #fff;
+}
+
+a:hover {
+  color: blue !important;
+}
