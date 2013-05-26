@@ -2,8 +2,12 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
-
+    @groups_1 = Group.where(:course => 1)
+    @groups_2 = Group.where(:course => 2)
+    @groups_3 = Group.where(:course => 3)
+    @groups_4 = Group.where(:course => 4)
+    @groups_5 = Group.where(:course => 5)
+    @groups_6 = Group.where(:course => 6)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @groups }

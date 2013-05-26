@@ -87,3 +87,12 @@ span.label-self_government a{
 a:hover {
   color: blue !important;
 }
+
+.groups {
+  border-right: 1px solid #ccc;
+  height: 500px;
+}
+
+.groups:last-of-type  { 
+  border-right: 0 !important;
+ }

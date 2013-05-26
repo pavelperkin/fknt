@@ -1,25 +1,11 @@
-<h1>Listing groups</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Course</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @groups.each do |group| %>
-  <tr>
-    <td><%= group.name %></td>
-    <td><%= group.course %></td>
-    <td><%= link_to 'Show', group %></td>
-    <td><%= link_to 'Edit', edit_group_path(group) %></td>
-    <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<div class = 'row-fluid' style='min-height: 520px;'>
+  <%= render 'groups_list', :groups => @groups_1, :course => 1%>
+  <%= render 'groups_list', :groups => @groups_2, :course => 2%>
+  <%= render 'groups_list', :groups => @groups_3, :course => 3%>
+  <%= render 'groups_list', :groups => @groups_4, :course => 4%>
+  <%= render 'groups_list', :groups => @groups_5, :course => 5%>
+  <%= render 'groups_list', :groups => @groups_6, :course => 6%>
+ 
+  
+</div>
 <%= link_to 'New Group', new_group_path %>

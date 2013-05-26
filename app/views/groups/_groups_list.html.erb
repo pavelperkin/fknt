@@ -1,0 +1,8 @@
+<div class= 'span2 groups'>
+  <h3><%= "#{course}й курс" %></h3>
+  <ul class = 'unstyled'>
+    <% groups.sort_by(&:name).each do |group| %>
+      <li><%= link_to group.name, group %></li>
+    <% end %>
+  </ul>
+</div>
