@@ -1,5 +1,8 @@
 Fknt::Application.routes.draw do
+  devise_for :students
+
   resources :messages
+  resources :students
 
 
   resources :topics

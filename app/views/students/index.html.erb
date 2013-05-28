@@ -1,0 +1,8 @@
+<ul>
+<% @students.each do |student| %>
+<li>
+	<%= student.email %>
+	<%= image_tag student.avatar.url %>	
+</li>
+<% end %>
+</ul>
