@@ -4,10 +4,10 @@ gem 'rails', '3.2.13'
 
 
 gem 'devise'
-# gem 'sqlite3'
+gem 'sqlite3'
 gem 'carrierwave'
 gem "fog"
-gem 'pg'
+# gem 'pg'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -35,5 +35,3 @@ gem "twitter-bootstrap-rails"
 
 # To use debugger
 # gem 'debugger'
-
-# sudo heroku config:set AWS_ACCESS_KEY_ID=AKIAJUCM24WUGUJ7PEBQ AWS_SECRET_ACCESS_KEY=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

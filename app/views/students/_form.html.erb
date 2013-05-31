@@ -1,9 +1,0 @@
-<%= form_for @student, :html => {:multipart => true} do |f| %>
-  <p>
-    <label>My Avatar</label>
-    <%= f.file_field :avatar %>
-    <%= f.text_field :email %>
-    <%= f.password_field :password%>
-    <%= f.submit %>
-  </p>
-<% end %>

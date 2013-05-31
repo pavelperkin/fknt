@@ -1,12 +1,8 @@
-class Student < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
+class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me,
+   attr_accessible :email, :password, :password_confirmation, :remember_me,
        :name, :surname, :patronymic,
        :birthday, :gender_id, :group_id,
        :about_me, :nickname, :avatar,
@@ -14,8 +10,7 @@ class Student < ActiveRecord::Base
        :google_plus_url, :linked_in_url,
        :skype_nickname, :github_nickname,
        :about_me_nickname, :cv_url,
-       :donntu_masters_url
+       :donntu_masters_url, :teacher, :praepostor
        
   mount_uploader :avatar, AvatarUploader
-  # attr_accessible :title, :body
 end

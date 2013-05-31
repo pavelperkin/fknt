@@ -1,13 +1,9 @@
 Fknt::Application.routes.draw do
-  devise_for :students
+  devise_for :users
 
   resources :messages
-  resources :students
-
-
+  resources :users
   resources :topics
-
-
   resources :groups
   resources :schedules
   resources :days

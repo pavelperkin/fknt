@@ -1,6 +1,6 @@
-class DeviseCreateStudents < ActiveRecord::Migration
+class DeviseCreateUsers < ActiveRecord::Migration
   def change
-    create_table(:students) do |t|
+    create_table(:users) do |t|
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
@@ -32,12 +32,11 @@ class DeviseCreateStudents < ActiveRecord::Migration
 
       ## Token authenticatable
       # t.string :authentication_token
-
       t.string :name
       t.string :surname
       t.string :patronymic
       t.datetime :birthday
-      t.integer :gender_id
+      t.integer :gender
       t.integer :group_id
       t.string :facebook_url
       t.string :vk_url
@@ -51,15 +50,16 @@ class DeviseCreateStudents < ActiveRecord::Migration
       t.string :donntu_masters_url
       t.text :about_me
       t.string :nickname
-      t.string :avatar
+      t.boolean :teacher
+      t.boolean :praepostor
 
       t.timestamps
     end
 
-    add_index :students, :email,                :unique => true
-    add_index :students, :reset_password_token, :unique => true
-    # add_index :students, :confirmation_token,   :unique => true
-    # add_index :students, :unlock_token,         :unique => true
-    # add_index :students, :authentication_token, :unique => true
+    add_index :users, :email,                :unique => true
+    add_index :users, :reset_password_token, :unique => true
+    # add_index :users, :confirmation_token,   :unique => true
+    # add_index :users, :unlock_token,         :unique => true
+    # add_index :users, :authentication_token, :unique => true
   end
 end
