@@ -22,6 +22,7 @@ html, body {
   height: auto !important;
   height: 100%;
   margin: 0 auto -40px;
+  background-color:#fff;
 }
 .content{
   position: relative;
@@ -96,3 +97,57 @@ a:hover {
 .groups:last-of-type  { 
   border-right: 0 !important;
  }
+
+#main-wrapper{
+  background-color:#fff;
+}
+
+
+.articles-list-item{
+  margin: 20px 0;
+}
+.articles-list-item .thumbnail{
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.articles-list-item h4{
+  margin-top:0;
+}
+.articles-list-item .article-preview{
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+.articles-list-item .article-preview .gradient{
+  position:absolute;
+  bottom:0;
+  left:0;
+  height:50px;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.0)), to(rgba(255,255,255,1.0)));
+}
+
+.article-list-item-2{
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.article-list-item-2 h4{
+  margin-top:0;
+}
+.article-list-item-2 h4 a{
+  text-decoration: underline;
+}
+.article-list-item-2 .thumbnail{
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.article-list-item-2 .gradient{
+  position:absolute;
+  bottom:0;
+  left:0;
+  height:50px;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(245,245,245,0.0)), to(rgba(245,245,245,1.0)));
+}

@@ -1,13 +1,16 @@
 <div class="row-fluid">
   <% @articles.each do |article| %>
-  	<div class="span4">
-  	  <div style='height: 200px; overflow: hidden'>	
-  	    <h4><%= article.header %></h4>
-  	    <%= image_tag article.img_url, :class => 'img-rounded pull-left', :style => 'margin: 0 5px; width:50%;' %>	
-  	    <p><%= article.preview %></p>
-  	  </div>
-  	  <br/>
-  	  <span class='pull-right label <%= "label-#{Tag.find(article.tag_id).name}" %>'><%= link_to t("activerecord.attributes.tag.#{Tag.find(article.tag_id).name}"), send("#{Tag.find(article.tag_id).name}_path")  %></span>
+  	<div class="articles-list-item span4">
+        <div class="article-preview">
+          <%= image_tag article.img_url, :class => 'thumbnail span6' %>
+          <h4><%= article.header %></h4>
+          <%= article.preview %>
+          <div class="gradient">
+          </div>
+        </div>
+        <span class='pull-right label <%= "label-#{Tag.find(article.tag_id).name}" %>'>
+          <%= link_to t("activerecord.attributes.tag.#{Tag.find(article.tag_id).name}"), send("#{Tag.find(article.tag_id).name}_path") %>
+        </span>
   	</div>
   <% end %>
 </div>
@@ -15,6 +18,6 @@
 
 <hr/>
 
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'New Article', new_article_path, :class => 'btn' %>
 
 
