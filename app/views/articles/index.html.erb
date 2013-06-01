@@ -1,6 +1,6 @@
 <div class="row-fluid">
   <% @articles.each do |article| %>
-  	<div class="articles-list-item span4">
+  	<div class="articles-list-item span6">
         <div class="article-preview">
           <%= image_tag article.img_url, :class => 'thumbnail span6' %>
           <h4><%= article.header %></h4>

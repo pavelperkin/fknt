@@ -151,3 +151,10 @@ a:hover {
   width: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(245,245,245,0.0)), to(rgba(245,245,245,1.0)));
 }
+
+.article h2{
+  margin-top: 0;
+}
+.article .thumbnail{
+  margin: 0 10px 5px 0;
+}
