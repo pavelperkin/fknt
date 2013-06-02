@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
    attr_accessible :email, :password, :password_confirmation, :remember_me,
        :name, :surname, :patronymic,
-       :birthday, :gender_id, :group_id,
+       :birthday, :gender, :group_id,
        :about_me, :nickname, :avatar,
        :facebook_url, :vk_url, :twitter_url,
        :google_plus_url, :linked_in_url,

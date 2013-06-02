@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(:version => 20130531042614) do
     t.string   "surname"
     t.string   "patronymic"
     t.datetime "birthday"
-    t.integer  "gender"
+    t.string   "gender"
     t.integer  "group_id"
     t.string   "facebook_url"
     t.string   "vk_url"
