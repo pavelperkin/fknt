@@ -4,9 +4,7 @@
         <div class="article-preview">
           <%= image_tag article.img_url, :class => 'thumbnail span6' %>
           <h4><%= article.header %></h4>
-          <%= article.preview %>
-          <div class="gradient">
-          </div>
+          <%= truncate(article.preview, :length => 240, :separator => ' ', :omission =>' ...') %>
         </div>
         <span class='pull-right label <%= "label-#{Tag.find(article.tag_id).name}" %>'>
           <%= link_to t("activerecord.attributes.tag.#{Tag.find(article.tag_id).name}"), send("#{Tag.find(article.tag_id).name}_path") %>

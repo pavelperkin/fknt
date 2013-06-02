@@ -4,9 +4,7 @@
 	  <div class="article-list-item-2">
 	  	<%= image_tag article.img_url, :class => 'thumbnail span5 pull-left' %>
 		<h4><%= link_to article.header, article %></h4>
-		<%= article.preview %>
-		<div class="gradient">
-		</div>
+		<%= truncate(article.preview, :length => 330, :separator => ' ', :omission =>' ...') %>
 	  </div>
 	</div>
   <% end %>
