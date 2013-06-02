@@ -1,15 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @group.name %>
-</p>
-
-<p>
-  <b>Course:</b>
-  <%= @group.course %>
-</p>
-
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
+<h2><%= @group.name %></h2>
+  
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        <i class="icon-upload"></i>&nbsp;<%= ScheduleType.find(@group.schedules.first.schedule_type_id).name %>
+      </a>      
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <%= render "schedules/group_schedule", :schedule => @group.schedules.first %>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        <i class="icon-download"></i>&nbsp;<%= ScheduleType.find(@group.schedules.last.schedule_type_id).name %>
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <%= render "schedules/group_schedule", :schedule => @group.schedules.last %>
+      </div>
+    </div>
+  </div>
+</div>
 <%= link_to 'Back', groups_path %>

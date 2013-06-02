@@ -1,37 +1,55 @@
-<p id="notice"><%= notice %></p>
+<h1><%= "Группа #{@schedule.group.name}" %></h1>
+<h2><%= "#{ScheduleType.find(@schedule.schedule_type_id).name} неделя"%></h2>
+<table class= 'table table-bordered table-hover table-striped'>
+<tr>
+  <th></th>   
+  <th>Понедельник</th>
+  <th>Вторник</th>
+  <th>Среда</th>
+  <th>Четверг</th>
+  <th>Пятница</th>  
+</tr>
+<tr>
+  <td>1</td>  
+  <td><%= @schedule.mon_1%></td>
+  <td><%= @schedule.tue_1%></td>
+  <td><%= @schedule.wed_1%></td>
+  <td><%= @schedule.thu_1%></td>
+  <td><%= @schedule.fri_1%></td>
+</tr>
+<tr>
+  <td>2</td>  
+  <td><%= @schedule.mon_2%></td>
+  <td><%= @schedule.tue_2%></td>
+  <td><%= @schedule.wed_2%></td>
+  <td><%= @schedule.thu_2%></td>
+  <td><%= @schedule.fri_2%></td>
+</tr
+<tr>
+  <td>3</td>  
+  <td><%= @schedule.mon_3%></td>
+  <td><%= @schedule.tue_3%></td>
+  <td><%= @schedule.wed_3%></td>
+  <td><%= @schedule.thu_3%></td>
+  <td><%= @schedule.fri_3%></td>
+</tr
+<tr>
+  <td>4</td>  
+  <td><%= @schedule.mon_4%></td>
+  <td><%= @schedule.tue_4%></td>
+  <td><%= @schedule.wed_4%></td>
+  <td><%= @schedule.thu_4%></td>
+  <td><%= @schedule.fri_4%></td>
+</tr
+<tr>
+  <td>5</td>  
+  <td><%= @schedule.mon_5%></td>
+  <td><%= @schedule.tue_5%></td>
+  <td><%= @schedule.wed_5%></td>
+  <td><%= @schedule.thu_5%></td>
+  <td><%= @schedule.fri_5%></td>
+</tr>
+</table>
 
-<h1><%= "Группа #{Group.find(@schedules.first.group_id).name}" %></h1>
-
-
-<div class="accordion" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        <i class="icon-upload"></i>&nbsp;<%= ScheduleType.find(@schedules.first.schedule_type_id).name %>
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        <%= render "group_schedule", :schedule => @schedules.first %>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        <i class="icon-download"></i>&nbsp;<%= ScheduleType.find(@schedules.last.schedule_type_id).name %>
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <%= render "group_schedule", :schedule => @schedules.last %>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<%= link_to 'Back', schedules_path %>
+<%= link_to 'Back', @schedules_path %>
+<%=link_to_function("Print this Page", "javascript:print()")%>

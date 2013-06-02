@@ -1,73 +1,37 @@
-<h1>Listing schedules</h1>
+<p id="notice"><%= notice %></p>
 
-<table>
-  <tr>
-    <th>Mon 1</th>
-    <th>Mon 2</th>
-    <th>Mon 3</th>
-    <th>Mon 4</th>
-    <th>Mon 5</th>
-    <th>Tue 1</th>
-    <th>Tue 2</th>
-    <th>Tue 3</th>
-    <th>Tue 4</th>
-    <th>Tue 5</th>
-    <th>Wed 1</th>
-    <th>Wed 2</th>
-    <th>Wed 3</th>
-    <th>Wed 4</th>
-    <th>Wed 5</th>
-    <th>Thu 1</th>
-    <th>Thu 2</th>
-    <th>Thu 3</th>
-    <th>Thu 4</th>
-    <th>Thu 5</th>
-    <th>Fri 1</th>
-    <th>Fri 2</th>
-    <th>Fri 3</th>
-    <th>Fri 4</th>
-    <th>Fri 5</th>
-    <th>group</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1><%= "Группа #{Group.find(@schedules.first.group_id).name}" %></h1>
 
-<% @schedules.each do |schedule| %>
-  <tr>
-    <td><%= schedule.mon_1 %></td>
-    <td><%= schedule.mon_2 %></td>
-    <td><%= schedule.mon_3 %></td>
-    <td><%= schedule.mon_4 %></td>
-    <td><%= schedule.mon_5 %></td>
-    <td><%= schedule.tue_1 %></td>
-    <td><%= schedule.tue_2 %></td>
-    <td><%= schedule.tue_3 %></td>
-    <td><%= schedule.tue_4 %></td>
-    <td><%= schedule.tue_5 %></td>
-    <td><%= schedule.wed_1 %></td>
-    <td><%= schedule.wed_2 %></td>
-    <td><%= schedule.wed_3 %></td>
-    <td><%= schedule.wed_4 %></td>
-    <td><%= schedule.wed_5 %></td>
-    <td><%= schedule.thu_1 %></td>
-    <td><%= schedule.thu_2 %></td>
-    <td><%= schedule.thu_3 %></td>
-    <td><%= schedule.thu_4 %></td>
-    <td><%= schedule.thu_5 %></td>
-    <td><%= schedule.fri_1 %></td>
-    <td><%= schedule.fri_2 %></td>
-    <td><%= schedule.fri_3 %></td>
-    <td><%= schedule.fri_4 %></td>
-    <td><%= schedule.fri_5 %></td>
-    <td><%= schedule.group.name %></td>
-    <td><%= link_to 'Show', schedule %></td>
-    <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-    <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        <i class="icon-upload"></i>&nbsp;<%= ScheduleType.find(@schedules.first.schedule_type_id).name %>
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <%= render "group_schedule", :schedule => @schedules.first %>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        <i class="icon-download"></i>&nbsp;<%= ScheduleType.find(@schedules.last.schedule_type_id).name %>
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <%= render "group_schedule", :schedule => @schedules.last %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'New Schedule', new_schedule_path %>
+
+
+
+
+<%= link_to 'Back', schedules_path %>

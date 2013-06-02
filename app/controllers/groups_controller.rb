@@ -45,16 +45,10 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(params[:group])
-
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
-        format.json { render json: @group, status: :created, location: @group }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
+    @group.save
+    @group.schedules.create({:schedule_type_id => 1})
+    @group.schedules.create({:schedule_type_id => 2})
+    redirect_to @group, notice: 'Group was successfully created.'
   end
 
   # PUT /groups/1
