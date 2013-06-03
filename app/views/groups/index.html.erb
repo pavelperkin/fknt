@@ -1,11 +1,11 @@
-<div class = 'row-fluid' style='min-height: 520px;'>
-  <%= render 'groups_list', :groups => @groups_1, :course => 1%>
-  <%= render 'groups_list', :groups => @groups_2, :course => 2%>
-  <%= render 'groups_list', :groups => @groups_3, :course => 3%>
-  <%= render 'groups_list', :groups => @groups_4, :course => 4%>
-  <%= render 'groups_list', :groups => @groups_5, :course => 5%>
-  <%= render 'groups_list', :groups => @groups_6, :course => 6%>
- 
-  
+<div class = 'row-fluid groups-list' style='min-height: 520px;'>
+  <div class="well" style="overflow: hidden;">
+    <%= render 'groups_list', :groups => @groups_1, :course => 1%>
+    <%= render 'groups_list', :groups => @groups_2, :course => 2%>
+    <%= render 'groups_list', :groups => @groups_3, :course => 3%>
+    <%= render 'groups_list', :groups => @groups_4, :course => 4%>
+    <%= render 'groups_list', :groups => @groups_5, :course => 5%>
+    <%= render 'groups_list', :groups => @groups_6, :course => 6%>
+  </div>
 </div>
-<%= link_to 'New Group', new_group_path %>
+<%= link_to 'New Group', new_group_path, :class => 'btn' %>

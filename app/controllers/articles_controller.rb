@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.order("created_at DESC").limit(3)
+    @articles = Article.order("created_at DESC").limit(4)
 
     respond_to do |format|
       format.html # index.html.erb

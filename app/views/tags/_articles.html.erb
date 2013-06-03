@@ -1,13 +1,11 @@
 <div class="row-fluid">
   <% articles.sort_by(&:updated_at).reverse.each do |article| %>
-	<div class='well span6 row-fluid' style='height: 200px; margin-left: 15px;'>
-	  <div class="span4">
-	  	<%= image_tag article.img_url, :class => 'img-rounded pull-left', :style => 'margin: 0 5px 0 0; width:100%;' %>	
+	<div class='well span6'>
+	  <div class="article-list-item-2">
+	  	<%= image_tag article.img_url, :class => 'thumbnail span5 pull-left' %>
+		<h4><%= link_to article.header, article %></h4>
+		<%= truncate(article.preview, :length => 330, :separator => ' ', :omission =>' ...') %>
 	  </div>
-	  <div class="span8">
-	    <h4 style='text-align:center; margin-top: -7px;'><%= link_to article.header, article %></h4>
-	    <p><%= article.preview %></p>	
-	  </div>  	
-	</div>	
+	</div>
   <% end %>
 </div>

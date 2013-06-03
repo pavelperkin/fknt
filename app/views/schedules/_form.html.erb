@@ -12,16 +12,71 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :group_id %><br />
-    <%= f.number_field :group_id %>
+    <%= f.label :group_id %>
+    <%= f.number_field :group_id %><br />
   </div>
   <div class="field">
-    <%= f.label :schedule_type_id %><br />
-    <%= f.select :schedule_type_id, options_for_select(ScheduleType.all.collect{ |x| [x.name, x.id] }) %>
+    <%= f.label :schedule_type_id %>
+    <%= f.select :schedule_type_id, options_for_select(ScheduleType.all.collect{ |x| [x.name, x.id] }) %><br />
   </div>
-  <div class="field">
+  <table class="unstyled new-schedule">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Пон</th>
+        <th>Вт</th>
+        <th>Ср</th>
+        <th>Чт</th>
+        <th>Пт</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1&nbsp;</td>
+        <td><%= f.text_field :mon_1 %></td>
+        <td><%= f.text_field :tue_1 %></td>
+        <td><%= f.text_field :wed_1 %></td>
+        <td><%= f.text_field :thu_1 %></td>
+        <td><%= f.text_field :fri_1 %></td>
+      </tr>
+      <tr>
+        <td>2&nbsp;</td>
+        <td><%= f.text_field :mon_2 %></td>
+        <td><%= f.text_field :tue_2 %></td>
+        <td><%= f.text_field :wed_2 %></td>
+        <td><%= f.text_field :thu_2 %></td>
+        <td><%= f.text_field :fri_2 %></td>
+      </tr>
+      <tr>
+        <td>3&nbsp;</td>
+        <td><%= f.text_field :mon_3 %></td>
+        <td><%= f.text_field :tue_3 %></td>
+        <td><%= f.text_field :wed_3 %></td>
+        <td><%= f.text_field :thu_3 %></td>
+        <td><%= f.text_field :fri_3 %></td>
+      </tr>
+      <tr>
+        <td>4&nbsp;</td>
+        <td><%= f.text_field :mon_4 %></td>
+        <td><%= f.text_field :tue_4 %></td>
+        <td><%= f.text_field :wed_4 %></td>
+        <td><%= f.text_field :thu_4 %></td>
+        <td><%= f.text_field :fri_4 %></td>
+      </tr>
+      <tr>
+        <td>5&nbsp;</td>
+        <td><%= f.text_field :mon_5 %></td>
+        <td><%= f.text_field :tue_5 %></td>
+        <td><%= f.text_field :wed_5 %></td>
+        <td><%= f.text_field :thu_5 %></td>
+        <td><%= f.text_field :fri_5 %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div class="field">
     <%= f.label :mon_1 %><br />
-    <%= f.text_field :mon_1 %>
+    
   </div>
   <div class="field">
     <%= f.label :mon_2 %><br />
@@ -41,7 +96,7 @@
   </div>
   <div class="field">
     <%= f.label :tue_1 %><br />
-    <%= f.text_field :tue_1 %>
+    
   </div>
   <div class="field">
     <%= f.label :tue_2 %><br />
@@ -61,7 +116,7 @@
   </div>
   <div class="field">
     <%= f.label :wed_1 %><br />
-    <%= f.text_field :wed_1 %>
+    
   </div>
   <div class="field">
     <%= f.label :wed_2 %><br />
@@ -81,7 +136,7 @@
   </div>
   <div class="field">
     <%= f.label :thu_1 %><br />
-    <%= f.text_field :thu_1 %>
+    
   </div>
   <div class="field">
     <%= f.label :thu_2 %><br />
@@ -101,7 +156,7 @@
   </div>
   <div class="field">
     <%= f.label :fri_1 %><br />
-    <%= f.text_field :fri_1 %>
+    
   </div>
   <div class="field">
     <%= f.label :fri_2 %><br />
@@ -118,8 +173,9 @@
   <div class="field">
     <%= f.label :fri_5 %><br />
     <%= f.text_field :fri_5 %>
-  </div>
+  </div> -->
   <div class="actions">
+    <br/>
     <%= f.submit %>
   </div>
 <% end %>

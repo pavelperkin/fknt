@@ -22,6 +22,7 @@ html, body {
   height: auto !important;
   height: 100%;
   margin: 0 auto -40px;
+  background-color:#fff;
 }
 .content{
   position: relative;
@@ -84,9 +85,9 @@ span.label-self_government a{
   color: #fff;
 }
 
-a:hover {
+/*a:hover {
   color: blue !important;
-}
+}*/
 
 .groups {
   border-right: 1px solid #ccc;
@@ -96,3 +97,83 @@ a:hover {
 .groups:last-of-type  { 
   border-right: 0 !important;
  }
+
+#main-wrapper{
+  background-color:#fff;
+}
+
+
+.articles-list-item{
+  margin: 20px 0;
+}
+.articles-list-item .thumbnail{
+  margin-right: 10px;
+  margin-bottom: 5px;
+  max-height: 180px;
+}
+.articles-list-item h4{
+  margin-top:0;
+}
+.articles-list-item .article-preview{
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.article-list-item-2{
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.article-list-item-2 h4{
+  margin-top:0;
+}
+.article-list-item-2 h4 a{
+  text-decoration: underline;
+}
+.article-list-item-2 .thumbnail{
+  margin-right: 10px;
+  margin-bottom: 5px;
+  max-height: 200px;
+}
+.article-list-item-2 .gradient{
+  position:absolute;
+  bottom:0;
+  left:0;
+  height:50px;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(245,245,245,0.0)), to(rgba(245,245,245,1.0)));
+}
+
+.article h2{
+  margin-top: 0;
+}
+.article .thumbnail{
+  margin: 0 10px 5px 0;
+}
+
+.b-day select{
+  width: 105px;
+}
+.b-day select:first-child{
+  width: 60px;
+}
+.b-day select:last-child{
+  width: 75px;
+}
+
+.users-list li{
+  height: 70px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.users-list li .thumbnail{
+  max-width: 100px;
+}
+.users-list li .email{  
+  margin-left: 120px;
+}
+.new-schedule input{
+  margin-bottom: 0 !important;
+}

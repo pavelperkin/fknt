@@ -1,32 +1,33 @@
 <%= form_for(@article) do |f| %>  
-<div class="row-fluid">
-  <div class="span3">
-    <h1>Новая статья</h1>
-    <%= f.label :header %>
-    <%= f.text_field :header %>
-    <%= f.label :tag_id %><br />
-    <%= f.select :tag_id, options_for_select(Tag.all.collect{ |x| [I18n.t("activerecord.attributes.tag.#{x.name}"), x.id] }) %>
-    <%= f.label :img_url %><br />
-    <%= f.text_field :img_url %>
-    <%= f.submit 'Create', :class => 'btn btn-primary' %>
-    <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-      <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="row-fluid new-article">
+  <div class="well">
+    <h3>Новая статья</h3>
+    <div class="span8">
+      <%= f.label :header %>
+      <%= f.text_field :header, :class => 'span12' %>
+      <%= f.label :main_text %>
+      <%= f.text_area :main_text, :class => 'span12', :style => 'height:250px;' %>
+      <%= f.label :preview %>
+      <%= f.text_area :preview, :class => 'span12', :style => 'height: 100px;' %>
     </div>
-  <% end %>
+    <div class="span3">
+      <%= f.label :tag_id %>
+      <%= f.select :tag_id, options_for_select(Tag.all.collect{ |x| [I18n.t("activerecord.attributes.tag.#{x.name}"), x.id] }) %><br/>
+      <%= f.label :img_url %>
+      <%= f.text_field :img_url %><br/>
+      <%= f.submit 'Create', :class => 'btn btn-primary' %>
+      <% if @article.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+        <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    </div>
+    <div class="clearfix"></div>
   </div>
-  <div class="span6">
-    <%= f.label :main_text %>
-    <%= f.text_area :main_text, :style => 'width: 100%;' %>
-  </div>
-  <div class="span3">
-    <%= f.label :preview %>
-    <%= f.text_area :preview, :style => 'width: 100%;' %>
-  </div>  
 </div>
 <% end %>
