@@ -11,14 +11,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :group_id %>
-    <%= f.number_field :group_id %><br />
-  </div>
-  <div class="field">
-    <%= f.label :schedule_type_id %>
-    <%= f.select :schedule_type_id, options_for_select(ScheduleType.all.collect{ |x| [x.name, x.id] }) %><br />
-  </div>
   <table class="unstyled new-schedule">
     <thead>
       <tr>

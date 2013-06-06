@@ -1,6 +1,7 @@
-<h1>Editing schedule</h1>
+<h1><%= @schedule.group.name %></h1>
+<h4><%= ScheduleType.find(@schedule.schedule_type_id).name %></h4>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @schedule %> |
-<%= link_to 'Back', schedules_path %>
+<%= link_to 'Back', @schedule.group %>
