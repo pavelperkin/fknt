@@ -1,6 +1,6 @@
 <%= form_for @user, :html => {:multipart => true} do |f| %>
-  <label>My Avatar</label>
-    <ul>
+  <ul>
+    <% if controller.action_name == 'new' %>
       <li>
         <%= f.label :email%>
         <%= f.text_field :email %>
@@ -9,84 +9,85 @@
         <%= f.label :password%>
         <%= f.password_field :password %>
       </li>
-      <li>
-        <%= f.label :surname%>
-        <%= f.text_field :surname %>
-      </li>
-      <li>
-        <%= f.label :name%>
-        <%= f.text_field :name %>
-      </li>
-      <li>
-        <%= f.label :patronymic%>
-        <%= f.text_field :patronymic %>
-      </li>
-      <li>
-        <%= f.label :nickname%>
-        <%= f.text_field :nickname %>
-      </li>
-      <li>
-        <%= f.label :birthday%>
-        <%= f.date_select :birthday, :start_year => 1930 %>
-      </li>
-      <li>
-        <%= f.label :gender%>
-        <%= f.select :gender, options_for_select(['male', 'female']) %>
-      </li>
-      <li>
-        <%= f.label :group_id%>
-        <%= f.select :group_id, options_for_select(Group.all.collect{ |x| [x.name, x.id] }) %>
-      </li>
-      <li>
-        <%= f.label :about_me%>
-        <%= f.text_area :about_me %>
-      </li>
-      <li>
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar %>
-      </li>
-      <li>
-        <%= f.label :facebook_url%>
-        <%= f.text_field :facebook_url %>
-      </li>
-      <li>
-        <%= f.label :vk_url%>
-        <%= f.text_field :vk_url %>
-      </li>
-      <li>
-        <%= f.label :twitter_url%>
-        <%= f.text_field :twitter_url %>
-      </li>
-      <li>
-        <%= f.label :google_plus_url%>
-        <%= f.text_field :google_plus_url %>
-      </li>
-      <li>
-        <%= f.label :linked_in_url%>
-        <%= f.text_field :linked_in_url %>
-      </li>
-      <li>
-        <%= f.label :skype_nickname%>
-        <%= f.text_field :skype_nickname %>
-      </li>
-      <li>
-        <%= f.label :github_nickname%>
-        <%= f.text_field :github_nickname %>
-      </li>
-      <li>
-        <%= f.label :donntu_masters_url%>
-        <%= f.text_field :donntu_masters_url %>
-      </li>
-      <li>
-        <%= f.label :cv_url%>
-        <%= f.text_field :cv_url %>
-      </li>
-      <li>
-        <%= f.label :about_me_nickname%>
-        <%= f.text_field :about_me_nickname %>
-      </li>
-      <li>
-        <%= f.submit %>
-      </li>
-    </ul>
+    <% end %>
+    <li>
+      <%= f.label :surname%>
+      <%= f.text_field :surname %>
+    </li>
+    <li>
+      <%= f.label :name%>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :patronymic%>
+      <%= f.text_field :patronymic %>
+    </li>
+    <li>
+      <%= f.label :nickname%>
+      <%= f.text_field :nickname %>
+    </li>
+    <li>
+      <%= f.label :birthday%>
+      <%= f.date_select :birthday, :start_year => 1930 %>
+    </li>
+    <li>
+      <%= f.label :gender%>
+      <%= f.select :gender, options_for_select(['male', 'female']) %>
+    </li>
+    <li>
+      <%= f.label :group_id%>
+      <%= f.select :group_id, options_for_select(Group.all.collect{ |x| [x.name, x.id] }) %>
+    </li>
+    <li>
+      <%= f.label :about_me%>
+      <%= f.text_area :about_me %>
+    </li>
+    <li>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </li>
+    <li>
+      <%= f.label :facebook_url%>
+      <%= f.text_field :facebook_url %>
+    </li>
+    <li>
+      <%= f.label :vk_url%>
+      <%= f.text_field :vk_url %>
+    </li>
+    <li>
+      <%= f.label :twitter_url%>
+      <%= f.text_field :twitter_url %>
+    </li>
+    <li>
+      <%= f.label :google_plus_url%>
+      <%= f.text_field :google_plus_url %>
+    </li>
+    <li>
+      <%= f.label :linked_in_url%>
+      <%= f.text_field :linked_in_url %>
+    </li>
+    <li>
+      <%= f.label :skype_nickname%>
+      <%= f.text_field :skype_nickname %>
+    </li>
+    <li>
+      <%= f.label :github_nickname%>
+      <%= f.text_field :github_nickname %>
+    </li>
+    <li>
+      <%= f.label :donntu_masters_url%>
+      <%= f.text_field :donntu_masters_url %>
+    </li>
+    <li>
+      <%= f.label :cv_url%>
+      <%= f.text_field :cv_url %>
+    </li>
+    <li>
+      <%= f.label :about_me_nickname%>
+      <%= f.text_field :about_me_nickname %>
+    </li>
+    <li>
+      <%= f.submit %>
+    </li>
+  </ul>
 <% end %>

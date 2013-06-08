@@ -8,7 +8,7 @@ Fknt::Application.routes.draw do
   resources :schedules
   resources :days
   resources :articles
-  root :to => 'articles#index'
+  root :to => redirect("/articles")
   match '/faculty' => "static_pages#faculty"
   match '/decanat' => "tags#decanat"
   match '/self_government' => "tags#self_government"

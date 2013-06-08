@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   
+  before_filter :can_edit_only_his_profile, :only => [:edit, :update]
+
   def index
     @users = User.all
   end
@@ -44,5 +46,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
     end
+  end
+
+  protected
+
+  def can_edit_only_his_profile
+    redirect_to users_path if current_user.id != params[:id].to_i
   end
 end
