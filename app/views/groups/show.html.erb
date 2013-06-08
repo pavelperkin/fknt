@@ -16,24 +16,28 @@
   <div class="accordion" id="accordion2" style="background-color:#fff;">
     <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-          <i class="icon-upload"></i>&nbsp;Верхняя неделя</a>
+        <h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+          <i class="icon-upload"></i>&nbsp;Верхняя неделя</a></h4>
       </div>
       <div id="collapseOne" class="accordion-body collapse">
         <div class="accordion-inner">
           <%= render "schedules/group_schedule", :schedule => @group.schedules.first %>
+          <%= link_to 'Редактировать расписание', edit_schedule_path(@group.schedules.first), :class => 'btn pull-right' %>
+          <div class="clearfix"></div>
         </div>
       </div>
     </div>
     <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        <h4><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
           <i class="icon-download"></i>&nbsp;Нижняя неделя
-        </a>
+        </a></h4>
       </div>
       <div id="collapseTwo" class="accordion-body collapse">
         <div class="accordion-inner">
           <%= render "schedules/group_schedule", :schedule => @group.schedules.last %>
+          <%= link_to 'Редактировать расписание', edit_schedule_path(@group.schedules.last), :class => 'btn pull-right' %>
+          <div class="clearfix"></div>
         </div>
       </div>
     </div>
