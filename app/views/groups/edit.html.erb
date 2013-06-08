@@ -1,6 +1,12 @@
-<h1>Editing group</h1>
+<div class="well">
+	<h3>Editing group</h3>
 
-<%= render 'form' %>
+	<%= render 'form' %>
+	<div class="btn-group pull-right">
+		<%= link_to 'Show', @group, :class => 'btn' %>
+		<%= link_to 'Back', groups_path, :class => 'btn' %>
+	</div>
+	<div class="clearfix"></div>
+</div>
 
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>
+
