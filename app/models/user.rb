@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
        :google_plus_url, :linked_in_url,
        :skype_nickname, :github_nickname,
        :about_me_nickname, :cv_url,
-       :donntu_masters_url, :teacher, :praepostor
+       :donntu_masters_url, :teacher, :praepostor, :admin, :department
        
   mount_uploader :avatar, AvatarUploader
 end
