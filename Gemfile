@@ -20,6 +20,7 @@ end
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem "twitter-bootstrap-rails"
+gem 'scv', :require => false
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

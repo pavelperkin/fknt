@@ -41,6 +41,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    database_cleaner (1.0.1)
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -115,6 +116,10 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    scv (0.0.4)
+      database_cleaner
+      railties
+      thor
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -152,6 +157,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   rails-i18n
   sass-rails (~> 3.2.3)
+  scv
   sqlite3
   therubyracer
   twitter-bootstrap-rails
