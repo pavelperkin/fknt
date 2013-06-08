@@ -1,0 +1,16 @@
+<table>
+  <tr>
+  	<th>Имя файла</th>
+  	<th>Предмет</th>
+  	<th>Добавлен</th>
+  	<th></th>
+  </tr>
+  <% uploads.each do |upload|%>
+  	<tr>
+  	  <td><%= upload.filename %></td>	
+  	  <td><%= upload.subject  %></td>	
+  	  <td><%= upload.updated_at.to_date %></td>	
+  	  <td><%= link_to 'Скачать', upload.file.to_s %></td>	
+  	</tr>	
+  <% end %>
+</table>	
