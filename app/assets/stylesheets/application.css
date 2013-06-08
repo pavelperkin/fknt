@@ -159,7 +159,7 @@ span.label-self_government a{
 .b-day select{
   width: 105px;
 }
-.b-day select:first-child{
+.b-day #user_birthday_3i{
   width: 60px;
 }
 .b-day select:last-child{
@@ -180,4 +180,8 @@ span.label-self_government a{
 }
 .new-schedule input{
   margin-bottom: 0 !important;
+}
+.aboutme textarea {
+  width: 85%;
+  height: 200px;
 }
