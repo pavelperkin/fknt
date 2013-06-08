@@ -1,21 +1,49 @@
-<%= @user.email %>
-<%= @user.name %>
-<%= @user.surname %>
-<%= @user.patronymic %>
-<%=l @user.birthday.to_date %>
-<%= @user.gender %>
-<%= Group.find(@user.group_id).name %>
-<%= @user.about_me %>
-<%= @user.nickname %>
-<%= image_tag @user.avatar %>
-<%= @user.facebook_url %>
-<%= @user.vk_url %>
-<%= @user.twitter_url %>
-<%= @user.google_plus_url %>
-<%= @user.linked_in_url %>
-<%= @user.skype_nickname %>
-<%= @user.github_nickname %>
-<%= @user.about_me_nickname %>
-<%= @user.cv_url %>
-<%= @user.donntu_masters_url %>
-<%= @user.praepostor %>
+<div class="well">
+	<h3><%= @user.name %> <%= @user.patronymic %> <%= @user.surname %> <small class="mute"><i>(<%= Group.find(@user.group_id).name %>)</i></small></h3>
+	<div class="row-fluid">
+		<div class="thumbnail span3"><%= image_tag @user.avatar %></div>
+		<div class="span9">
+			<i>
+				...also known as <b><%= @user.nickname %></b>.<br/>
+				<%= @user.gender %>, <%= @user.birthday.to_date %><br/>
+				Староста - <%= @user.praepostor %>
+			</i>
+			<hr/>
+			<%= @user.about_me %>
+			<hr/>
+			<h4>Контакты:</h4>
+			<ul>
+				<li>E-Mail: <%= @user.email %></li>
+				<li>Skype: <%= @user.skype_nickname %></li>
+			</ul>
+			<br/>
+			<h4>Соцсети:</h4>
+			<%= link_to @user.facebook_url do %>
+				<%= image_tag("icons/facebook.png", :size => "32x32", :alt => "facebook") %>
+			<% end %>
+			<%= link_to @user.vk_url do %>
+				<%= image_tag("icons/vkontakte.png", :size => "32x32", :alt => "vkontakte") %>
+			<% end %>
+			<%= link_to @user.twitter_url do %>
+				<%= image_tag("icons/twitter.png", :size => "32x32", :alt => "twitter") %>
+			<% end %>
+			<%= link_to @user.google_plus_url do %>
+				<%= image_tag("icons/google-plus.png", :size => "32x32", :alt => "google plus") %>
+			<% end %>
+			<%= link_to @user.linked_in_url do %>
+				<%= image_tag("icons/linkedin.png", :size => "32x32", :alt => "linked in") %>
+			<% end %>
+			<%= link_to @user.github_nickname do %>
+				<%= image_tag("icons/github.png", :size => "32x32", :alt => "github") %>
+			<% end %>
+			<br/><br/>
+			<h4>Еще ссылки:</h4>
+			<ul>
+				<li>Более полная информация: <%= @user.about_me_nickname %> </li>
+				<li>Резюме: <%= @user.cv_url %></li>
+				<li>Сайт на портале магистров: <%= @user.donntu_masters_url %></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
