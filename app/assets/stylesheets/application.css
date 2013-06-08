@@ -16,6 +16,9 @@ html, body {
   height: 100%;
   background-color:#f7f7f7 !important;
 }
+a:hover {
+  color:blue;
+}
 
 #wrap {
   min-height: 100%;
@@ -53,7 +56,7 @@ span.label-trade_union {
   background-color: #3a87ad;
 }
 
-span.label-decanat  {
+span.label-decanat {
   background-color: #468847;
 }
 
@@ -65,11 +68,11 @@ span.label-trade_union a:hover {
   background-color: #3a87ad;
 }
 
-span.label-decanat a:hover   {
+span.label-decanat a:hover {
   background-color: #468847;
 }
 
-span.label-self_government a:hover  {
+span.label-self_government a:hover {
   background-color: #f89406;
 }
 
@@ -85,10 +88,6 @@ span.label-self_government a{
   color: #fff;
 }
 
-/*a:hover {
-  color: blue !important;
-}*/
-
 .groups {
   border-right: 1px solid #ccc;
   height: 500px;
@@ -102,7 +101,12 @@ span.label-self_government a{
   background-color:#fff;
 }
 
-
+.articles-list > div:nth-child(2n+1) {
+  margin-left: 0;
+}
+.articles-list-item:nth-child(2n+1) {
+  margin-left: 0 !important;
+}
 .articles-list-item{
   margin: 20px 0;
 }

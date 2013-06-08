@@ -1,20 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="well">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @topic.name %>
-</p>
-
-<p>
-  <b>Tag:</b>
-  <%= @topic.tag %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @topic.user_id %>
-</p>
+	<h4 class="text-info"><%= @topic.name %></h4>
+	<span class="label label-info"><%= @topic.tag %></span>
+	<br/><br/>
 
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+	<p><%= @topic.body %></p>
+	<p>User: <%= @topic.user_id %><p>
+	<hr/>
+
+	<div class="btn-group pull-right">
+		<%= link_to 'Edit', edit_topic_path(@topic), :class => "btn" %>
+		<%= link_to 'Back', topics_path, :class => 'btn' %>
+	</div>
+
+	<div class="clearfix"></div>
+
+</div>

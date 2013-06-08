@@ -1,43 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div class="well">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @group.name %>
-</p>
+  <p>
+    <b>Name:</b>
+    <%= @group.name %>
+  </p>
 
-<p>
-  <b>Course:</b>
-  <%= @group.course %>
-</p>
+  <p>
+    <b>Course:</b>
+    <%= @group.course %>
+  </p>
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<div class="accordion" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        <i class="icon-upload"></i>&nbsp;Верхняя неделя</a>
+  <div class="accordion" id="accordion2" style="background-color:#fff;">
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+          <i class="icon-upload"></i>&nbsp;Верхняя неделя</a>
+      </div>
+      <div id="collapseOne" class="accordion-body collapse in">
+        <div class="accordion-inner">
+          <%= render "schedules/group_schedule", :schedule => @group.schedules.first %>
+        </div>
+      </div>
     </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        <%= render "schedules/group_schedule", :schedule => @group.schedules.first %>
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+          <i class="icon-download"></i>&nbsp;Нижняя неделя
+        </a>
+      </div>
+      <div id="collapseTwo" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <%= render "schedules/group_schedule", :schedule => @group.schedules.last %>
+        </div>
       </div>
     </div>
   </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        <i class="icon-download"></i>&nbsp;Нижняя неделя
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <%= render "schedules/group_schedule", :schedule => @group.schedules.last %>
-      </div>
-    </div>
+
+  <hr/>
+
+  <div class="btn-group pull-right">
+    <%= link_to 'Edit', edit_group_path(@group), :class => 'btn' %>
+    <%= link_to 'Back', groups_path, :class => 'btn' %>
   </div>
+  <div class="clearfix"></div>
+
 </div>
 
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
