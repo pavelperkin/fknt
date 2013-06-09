@@ -1,4 +1,7 @@
 Fknt::Application.routes.draw do
+  resources :vacancies
+
+
   resources :uploads
 
 

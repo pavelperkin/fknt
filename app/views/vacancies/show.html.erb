@@ -1,0 +1,26 @@
+<div class="well article">
+  <% if @vacancy.created_at.to_date == Time.now.to_date %>
+    <span class='label label-fresh pull-right'>New</span>
+  <% end %>
+  <h2><%=link_to @vacancy.company_name, @vacancy.web_address %></h2>
+  <p style="overflow:hidden;">
+    <%= link_to image_tag(@vacancy.company_logo_url, :class => 'thumbnail span4'), @vacancy.web_address %>
+    <%= @vacancy.description %>
+  </p>
+
+  <hr/>
+  <h4>Контактные данные</h4>
+  <ul>
+    <li>E-mail: <%= mail_to @vacancy.email %></li>
+    <li>Телефон: <%= @vacancy.phone %></li>
+  </ul>
+  <br/>
+
+  <div class="btn-group">
+    <%= link_to '← Предыдущая вакансия', (Vacancy.find(@vacancy.id-1) if @vacancy.id > Vacancy.first.id), :class => 'btn' %>
+    <%= link_to 'Следующая вакансия →', (Vacancy.find(@vacancy.id+1) if @vacancy.id < Vacancy.last.id), :class => 'btn' %>
+    <%= link_to 'Список вакансий', vacancies_path, :class => 'btn' %>
+  </div>
+
+  
+</div>

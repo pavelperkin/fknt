@@ -1,0 +1,19 @@
+<div class="row-fluid articles-list">
+  <% @vacancies.sort_by(&:updated_at).reverse.each do |vacancy| %>
+    <div class='well span6'>
+      <% if vacancy.created_at.to_date == Time.now.to_date %>
+        <span class='label label-fresh pull-right'>New</span>
+      <% end %>
+      <div class="article-list-item-2">
+        <%= link_to image_tag(vacancy.company_logo_url, :class => 'thumbnail span5 pull-left'), vacancy.web_address %>
+        <h4><%= link_to vacancy.company_name, vacancy %></h4>
+        <%= truncate(vacancy.description, :length => 330, :separator => ' ', :omission =>' ...') %>
+        <% if current_user && current_user.admin %>
+          </br>
+          <%= link_to 'Destroy', vacancy, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'New Vacancy', new_vacancy_path %>
+        <% end %>  
+      </div>
+    </div>
+  <% end %>
+</div>

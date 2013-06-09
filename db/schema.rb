@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608140034) do
+ActiveRecord::Schema.define(:version => 20130609090718) do
 
   create_table "articles", :force => true do |t|
     t.string   "header"
@@ -138,5 +138,16 @@ ActiveRecord::Schema.define(:version => 20130608140034) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "vacancies", :force => true do |t|
+    t.string   "company_name"
+    t.string   "company_logo_url"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "description"
+    t.string   "web_address"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
 end
