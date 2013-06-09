@@ -2,5 +2,5 @@
 
 <h1><%= "Группа #{Group.find(@schedule.group_id).name}" %></h1>
 <%= render "group_schedule", :schedule => @schedule %>
-<%= link_to 'Back', schedules_path %> | 
-<%=link_to_function("Print this Page", "javascript:print()")%>
+<%= link_to 'Назад', Group.find(@schedule.group_id) %> | 
+<%=link_to_function("Распечатать", "javascript:print()")%>

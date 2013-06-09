@@ -2,16 +2,19 @@
   <div class="row-fluid">
     <div class="span3">
       <% if controller.action_name == 'new' %>
-        <div><%= f.label :email%><%= f.text_field :email %></div>
-        <div><%= f.label :password%><%= f.password_field :password %></div>
+        <div><%= f.label :email%><%= f.text_field :email, :placeholder => '*' %></div>
+        <div><%= f.label :password%><%= f.password_field :password, :placeholder => '*' %></div>
       <% end %>
-      <div><%= f.label :surname%><%= f.text_field :surname %></div>
-      <div><%= f.label :name%><%= f.text_field :name %></div>
-      <div><%= f.label :patronymic%><%= f.text_field :patronymic %></div>
-      <div><%= f.label :nickname%><%= f.text_field :nickname %></div>
+      <div><%= f.label :surname%><%= f.text_field :surname, :placeholder => '*' %></div>
+      <div><%= f.label :name%><%= f.text_field :name, :placeholder => '*' %></div>
+      <div><%= f.label :patronymic%><%= f.text_field :patronymic, :placeholder => '*' %></div>
+      <div><%= f.label :nickname%><%= f.text_field :nickname, :placeholder => '*' %></div>
       <div class="b-day"><%= f.label :birthday%><%= f.date_select :birthday, :start_year => 1930 %></div>
-      <div><%= f.label :gender%><%= f.select :gender, options_for_select(['male', 'female']) %></div>
+      <div><%= f.label :gender%><%= f.select :gender, options_for_select(['мужской', 'женский']) %></div>
       <div><%= f.label :group_id%><%= f.select :group_id, options_for_select(Group.all.collect{ |x| [x.name, x.id] }) %></div>
+      <% if @user.teacher %>
+        <div><%= f.label :department%><%= f.select :department, options_for_select(['КИ', 'ПМИ', "КСМ", "АСУ"]) %></div>
+      <% end %>  
     </div>
     <div class="span3">
       <div><%= f.label :facebook_url%><%= f.text_field :facebook_url %></div>

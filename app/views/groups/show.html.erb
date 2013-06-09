@@ -22,6 +22,7 @@
       <div id="collapseOne" class="accordion-body collapse">
         <div class="accordion-inner">
           <%= render "schedules/group_schedule", :schedule => @group.schedules.first %>
+          <%= link_to 'Просмотр', @group.schedules.first %>
           <%= link_to 'Редактировать расписание', edit_schedule_path(@group.schedules.first), :class => 'btn pull-right' %>
           <div class="clearfix"></div>
         </div>
@@ -36,21 +37,37 @@
       <div id="collapseTwo" class="accordion-body collapse">
         <div class="accordion-inner">
           <%= render "schedules/group_schedule", :schedule => @group.schedules.last %>
+          <%= link_to 'Просмотр', @group.schedules.last %>
           <%= link_to 'Редактировать расписание', edit_schedule_path(@group.schedules.last), :class => 'btn pull-right' %>
           <div class="clearfix"></div>
         </div>
       </div>
     </div>
   </div>
-
-  <hr/>
-
-  <div class="btn-group pull-right">
-    <%= link_to 'Edit', edit_group_path(@group), :class => 'btn' %>
-    <%= link_to 'Back', groups_path, :class => 'btn' %>
-  </div>
   <div class="clearfix"></div>
 
+<!-- Users list -->
+<h4>Список студентов</h4>
+<table class="table table-hover">
+  <tr>
+    <th>№</th>
+    <th>ФИО</th>
+    <th></th>
+  </tr>
+  <% @users.sort_by(&:surname).each_with_index do |user, index| %>
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= "#{user.surname} #{user.name} #{user.patronymic}" %></td>
+      <td>
+        <% if user.praepostor %>
+          <span class="label label-important">Староста</span>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
 </div>
 
-
+<div class="btn-group pull-right">
+  <%= link_to 'Back', groups_path, :class => 'btn' %>
+</div>

@@ -1,4 +1,5 @@
 ru:
+  project_name: "fknt.info"
   activerecord:
     models:
     attributes:
@@ -6,3 +7,6 @@ ru:
         self_government: 'Самоуправление'
         decanat: 'Деканат'
         trade_union: 'Профком'
+  errors:
+    messages:
+      not_saved: "Мы предупреждали!"

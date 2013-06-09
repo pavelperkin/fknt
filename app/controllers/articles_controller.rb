@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :admin_only, :except => [:show, :index]
+
   def index
     @articles = Article.order("created_at DESC").limit(3)
   end
@@ -16,8 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
-    @article.save
+    @article = Article.create(params[:article])
     redirect_to @article, notice: 'Article was successfully created.'
   end
 
@@ -31,5 +32,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to root_path
+  end
+
+  protected
+
+  def admin_only
+    redirect_to root_path if !(current_user && current_user.admin)
   end
 end

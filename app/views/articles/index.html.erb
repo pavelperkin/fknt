@@ -12,10 +12,8 @@
   	</div>
   <% end %>
 </div>
-
-
-<hr/>
-
-<%= link_to 'New Article', new_article_path, :class => 'btn' %>
-
+<% if current_user && current_user.admin %>
+  <hr/>
+  <%= link_to 'New Article', new_article_path, :class => 'btn' %>
+<% end %>
 

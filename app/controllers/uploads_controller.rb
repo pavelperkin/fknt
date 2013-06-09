@@ -12,7 +12,7 @@ class UploadsController < ApplicationController
   def create
     @upload = Upload.new(params[:upload])
     @upload.save
-    redirect_to @upload, notice: 'Upload was successfully created.'    
+    redirect_to uploads_url, notice: 'Upload was successfully created.'    
   end
   
   def destroy
