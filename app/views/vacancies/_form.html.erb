@@ -10,31 +10,38 @@
       </ul>
     </div>
   <% end %>
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="field">
+        <%= f.label :company_name %>
+        <%= f.text_field :company_name %><br />
+      </div>
+      <div class="field">
+        <%= f.label :company_logo_url %>
+        <%= f.text_field :company_logo_url %><br />
+      </div>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email %><br />
+      </div>
+      <div class="field">
+        <%= f.label :web_address %>
+        <%= f.text_field :web_address %><br />
+      </div>  
+      <div class="field">
+        <%= f.label :phone %>
+        <%= f.text_field :phone %><br />
+      </div>
+    </div>
+    <div class="span5 vacancy-description">
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %><br />
+      </div>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :company_name %><br />
-    <%= f.text_field :company_name %>
-  </div>
-  <div class="field">
-    <%= f.label :company_logo_url %><br />
-    <%= f.text_field :company_logo_url %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :web_address %><br />
-    <%= f.text_field :web_address %>
-  </div>  
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

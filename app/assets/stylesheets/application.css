@@ -193,3 +193,7 @@ span.label-self_government a{
 img.social_link:hover {
   box-shadow: 3px 3px 4px #000;
 }
+.vacancy-description textarea {
+  width: 80%;
+  height: 320px;
+}
