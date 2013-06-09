@@ -1,6 +1,11 @@
-<h1>Editing vacancy</h1>
-
+<div class="well">
+<h3>Editing vacancy</h3>
 <%= render 'form' %>
+<div class="btn-group pull-right">
+	<%= link_to 'Show', @vacancy, :class => 'btn' %>
+	<%= link_to 'Back', vacancies_path, :class => 'btn' %>
+</div>
+<div class="clearfix"></div>
+</div>
 
-<%= link_to 'Show', @vacancy %> |
-<%= link_to 'Back', vacancies_path %>
+
