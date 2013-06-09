@@ -185,3 +185,7 @@ span.label-self_government a{
   width: 85%;
   height: 200px;
 }
+
+img.social_link:hover {
+  box-shadow: 3px 3px 4px #000;
+}
