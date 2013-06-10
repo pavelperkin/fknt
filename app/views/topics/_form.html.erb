@@ -14,8 +14,8 @@
     <div class="span3">
       <%= f.label :name %>
       <%= f.text_field :name %><br />
-      <%= f.label :tag %>
-      <%= f.text_field :tag %><br />
+      <%= f.label :tag%>
+      <%= f.select :tag, options_for_select(['Учеба', 'Студентческая жизнь', "Разное"]) %>
       <%= f.hidden_field :user_id, :value => current_user.id %><br />
     </div>
     <div class="span8">

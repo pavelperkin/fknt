@@ -3,9 +3,11 @@
 
   <table width="100%" class="table-bordered table">
     <tr>
-      <th class="span6">Name</th>
-      <th class="span3">Tag</th>
-      <th class="span2">User</th>
+      <th class="span5">Name</th>
+      <th class="span1">Tag</th>
+      <th class="span1">User</th>
+      <th class="span2">Создана</th>
+      <th class='span1'>Сообщений</th>
       <th class="span2"></th>
     </tr>
 
@@ -13,24 +15,28 @@
     <tr>
       <td><%= topic.name %></td>
       <td><%= topic.tag %></td>
-      <td><%= topic.user_id %></td>
+      <td><%= User.find(topic.user_id).nickname || User.find(topic.user_id).name %></td>
+      <td><%=l topic.updated_at.to_date %></td>
+      <td><%= topic.messages.count %></td>
       <td>
         <%= link_to topic, :class => 'btn btn-info' do %>
           <i class="icon-search"></i>
         <% end %>
-        <%= link_to edit_topic_path(topic), :class => 'btn btn-warning' do %>
-          <i class="icon-pencil"></i>
-        <% end %>
-        <%= link_to topic, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' do %>
-          <i class="icon-remove"></i>
+        <% if current_user %>
+          <%= link_to edit_topic_path(topic), :class => 'btn btn-warning' do %>
+            <i class="icon-pencil"></i>
+          <% end %>
+          <%= link_to topic, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' do %>
+            <i class="icon-remove"></i>
+          <% end %>
         <% end %>
       </td>
     </tr>
     <% end %>
   </table>
-
+<% if current_user %>
   <br />
 
   <%= link_to 'New Topic', new_topic_path, :class => 'btn' %>
-
+<% end %>
 </div>

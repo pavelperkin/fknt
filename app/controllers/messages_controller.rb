@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     @message.save
-    redirect_to @message, notice: 'Message was successfully created.'
+    redirect_to Topic.find(@message.topic_id), notice: 'Message was successfully created.'
   end
 
   def destroy
