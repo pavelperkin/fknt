@@ -8,4 +8,6 @@
     <%= render 'groups_list', :groups => @groups_6, :course => 6%>
   </div>
 </div>
-<%= link_to 'New Group', new_group_path, :class => 'btn' %>
+<% if current_user && current_user.admin %>
+  <%= link_to 'Добавить группу', new_group_path, :class => 'btn' %>
+<% end%>

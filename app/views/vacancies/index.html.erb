@@ -10,10 +10,13 @@
         <%= truncate(vacancy.description, :length => 330, :separator => ' ', :omission =>' ...') %>
         <% if current_user && current_user.admin %>
           </br>
-          <%= link_to 'Destroy', vacancy, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%= link_to 'New Vacancy', new_vacancy_path %>
+          <%= link_to 'Удалить', vacancy, method: :delete, data: { confirm: 'Are you sure?' } %>
+          
         <% end %>  
       </div>
     </div>
   <% end %>
 </div>
+<% if current_user && current_user.admin %>
+  <%= link_to 'Новая вакансия', new_vacancy_path %>
+<% end %>

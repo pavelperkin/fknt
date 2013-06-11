@@ -13,18 +13,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :filename %>
+    <%= f.label :filename, "Имя файла" %>
     <%= f.text_field :filename %><br />
   </div>
   <div class="field">
-    <%= f.label :subject %>
+    <%= f.label :subject, "Предмет" %>
     <%= f.text_field :subject %><br />
   </div>
   <div class="field">
-    <%= f.label :file %>
+    <%= f.label :file, "Файл" %>
     <%= f.file_field :file %><br /><br />
   </div>  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit, "Добавить", :class => 'btn' %>
   </div>
 <% end %>

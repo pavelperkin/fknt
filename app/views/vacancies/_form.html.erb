@@ -13,11 +13,11 @@
   <div class="row-fluid">
     <div class="span3">
       <div class="field">
-        <%= f.label :company_name %>
+        <%= f.label :company_name, "Название компании" %>
         <%= f.text_field :company_name %><br />
       </div>
       <div class="field">
-        <%= f.label :company_logo_url %>
+        <%= f.label :company_logo_url, "Ссылка на логотип" %>
         <%= f.text_field :company_logo_url %><br />
       </div>
       <div class="field">
@@ -25,17 +25,17 @@
         <%= f.text_field :email %><br />
       </div>
       <div class="field">
-        <%= f.label :web_address %>
+        <%= f.label :web_address, "Сайт компании" %>
         <%= f.text_field :web_address %><br />
       </div>  
       <div class="field">
-        <%= f.label :phone %>
+        <%= f.label :phone, "Телефон" %>
         <%= f.text_field :phone %><br />
       </div>
     </div>
     <div class="span5 vacancy-description">
       <div class="field">
-        <%= f.label :description %>
+        <%= f.label :description, "Описание вакансии" %>
         <%= f.text_area :description %><br />
       </div>
     </div>
@@ -43,6 +43,6 @@
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Сохранить" %>
   </div>
 <% end %>

@@ -2,14 +2,16 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <b>Name:</b>
+    <b>Название группы:</b>
     <%= @group.name %>
   </p>
 
-  <p>
-    <b>Course:</b>
-    <%= @group.course %>
-  </p>
+  <% if @group.course > 0%>
+    <p>
+      <b>Курс:</b>
+      <%= @group.course %>
+    </p>
+  <% end %>  
 
   <p id="notice"><%= notice %></p>
 
@@ -23,7 +25,9 @@
         <div class="accordion-inner">
           <%= render "schedules/group_schedule", :schedule => @group.schedules.first %>
           <%= link_to 'Просмотр', @group.schedules.first %>
-          <%= link_to 'Редактировать расписание', edit_schedule_path(@group.schedules.first), :class => 'btn pull-right' %>
+          <% if current_user && (current_user.admin || current_user.teacher)%>
+            <%= link_to 'Редактировать расписание', edit_schedule_path(@group.schedules.first), :class => 'btn pull-right' %>
+          <% end %>  
           <div class="clearfix"></div>
         </div>
       </div>
@@ -38,7 +42,9 @@
         <div class="accordion-inner">
           <%= render "schedules/group_schedule", :schedule => @group.schedules.last %>
           <%= link_to 'Просмотр', @group.schedules.last %>
-          <%= link_to 'Редактировать расписание', edit_schedule_path(@group.schedules.last), :class => 'btn pull-right' %>
+          <% if current_user && (current_user.admin || current_user.teacher)%>
+            <%= link_to 'Редактировать расписание', edit_schedule_path(@group.schedules.last), :class => 'btn pull-right' %>
+          <% end %>
           <div class="clearfix"></div>
         </div>
       </div>
@@ -69,5 +75,5 @@
 </div>
 
 <div class="btn-group pull-right">
-  <%= link_to 'Back', groups_path, :class => 'btn' %>
+  <%= link_to 'Список групп', groups_path, :class => 'btn' %>
 </div>

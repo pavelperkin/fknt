@@ -1,38 +1,40 @@
 <%= form_for @user, :html => {:multipart => true} do |f| %>
   <div class="row-fluid">
     <div class="span3">
+      <h4>Основная информация</h4>
       <% if controller.action_name == 'new' %>
         <div><%= f.label :email%><%= f.text_field :email, :placeholder => '*' %></div>
-        <div><%= f.label :password%><%= f.password_field :password, :placeholder => '*' %></div>
+        <div><%= f.label :password, "Пароль" %><%= f.password_field :password, :placeholder => '*' %></div>
       <% end %>
-      <div><%= f.label :surname%><%= f.text_field :surname, :placeholder => '*' %></div>
-      <div><%= f.label :name%><%= f.text_field :name, :placeholder => '*' %></div>
-      <div><%= f.label :patronymic%><%= f.text_field :patronymic, :placeholder => '*' %></div>
-      <div><%= f.label :nickname%><%= f.text_field :nickname, :placeholder => '*' %></div>
-      <div class="b-day"><%= f.label :birthday%><%= f.date_select :birthday, :start_year => 1930 %></div>
-      <div><%= f.label :gender%><%= f.select :gender, options_for_select(['мужской', 'женский']) %></div>
-      <div><%= f.label :group_id%><%= f.select :group_id, options_for_select(Group.all.collect{ |x| [x.name, x.id] }) %></div>
+      <div><%= f.label :surname, "Фамилия"%><%= f.text_field :surname, :placeholder => '*' %></div>
+      <div><%= f.label :name, "Имя" %><%= f.text_field :name, :placeholder => '*' %></div>
+      <div><%= f.label :patronymic, "Отчество" %><%= f.text_field :patronymic, :placeholder => '*' %></div>
+      <div><%= f.label :nickname, "Имя на сайте" %><%= f.text_field :nickname, :placeholder => '*' %></div>
+      <div class="b-day"><%= f.label :birthday, "Дата рождения" %><%= f.date_select :birthday, :start_year => 1930 %></div>
+      <div><%= f.label :gender, "Пол" %><%= f.select :gender, options_for_select(['мужской', 'женский']) %></div>
+      <div><%= f.label :group_id, "Группа" %><%= f.select :group_id, options_for_select(Group.all.collect{ |x| [x.name, x.id] }) %></div>
       <% if @user.teacher %>
-        <div><%= f.label :department%><%= f.select :department, options_for_select(['КИ', 'ПМИ', "КСМ", "АСУ"]) %></div>
+        <div><%= f.label :department, "Кафедра" %><%= f.select :department, options_for_select(['КИ', 'ПМИ', "КСМ", "АСУ"]) %></div>
       <% end %>  
     </div>
     <div class="span3">
-      <div><%= f.label :facebook_url%><%= f.text_field :facebook_url %></div>
-      <div><%= f.label :vk_url%><%= f.text_field :vk_url %></div>
-      <div><%= f.label :twitter_url%><%= f.text_field :twitter_url %></div>
-      <div><%= f.label :google_plus_url%><%= f.text_field :google_plus_url %></div>
-      <div><%= f.label :linked_in_url%><%= f.text_field :linked_in_url %></div>
-      <div><%= f.label :skype_nickname%><%= f.text_field :skype_nickname %></div>
-      <div><%= f.label :github_nickname%><%= f.text_field :github_nickname %></div>
-      <div><%= f.label :donntu_masters_url%><%= f.text_field :donntu_masters_url %></div>
-      <div><%= f.label :cv_url%><%= f.text_field :cv_url %></div>
-      <div><%= f.label :about_me_nickname%><%= f.text_field :about_me_nickname %></div>
+      <h4>Я в интернете</h4>
+      <div><%= f.label :facebook_url, "Ссылка на страницу facebook"%><%= f.text_field :facebook_url %></div>
+      <div><%= f.label :vk_url, "Ссылка на страницу Вконтакте"%><%= f.text_field :vk_url %></div>
+      <div><%= f.label :twitter_url, "Ссылка на страницу в Twitter"%><%= f.text_field :twitter_url %></div>
+      <div><%= f.label :google_plus_url, "Ссылка на страницу в Google+"%><%= f.text_field :google_plus_url %></div>
+      <div><%= f.label :linked_in_url, "Ссылка на страницу в Linkedin"%><%= f.text_field :linked_in_url %></div>
+      <div><%= f.label :skype_nickname, "Имя в Skype"%><%= f.text_field :skype_nickname %></div>
+      <div><%= f.label :github_nickname, "Ссылка на профиль в Github"%><%= f.text_field :github_nickname %></div>
+      <div><%= f.label :donntu_masters_url, "Ссылка на сайт на портале магистров ДонНТУ"%><%= f.text_field :donntu_masters_url %></div>
+      <div><%= f.label :cv_url, "Ссылка на актуальное резюме"%><%= f.text_field :cv_url %></div>
+      <div><%= f.label :about_me_nickname, "Ссылка на страницу About.me"%><%= f.text_field :about_me_nickname %></div>
     </div>
     <div class="span6">
-      <div><%= f.label :avatar %><%= f.file_field :avatar %></div><br/>
-      <div class="aboutme"><%= f.label :about_me%><%= f.text_area :about_me %></div>
+      <div><%= f.label :avatar, "Фотография" %><%= f.file_field :avatar %></div><br/>
+      <div class="aboutme"><%= f.label :about_me, "О себе:"%><%= f.text_area :about_me %></div>
     </div>
   </div>
   <hr/>
-  <%= f.submit %>
+  <%= f.submit "Сохранить", :class => 'btn' %>
 <% end %>

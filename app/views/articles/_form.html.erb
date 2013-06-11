@@ -4,19 +4,19 @@
     <h3>Новая статья</h3>
     <div class="row-fluid">
       <div class="span8">
-        <%= f.label :header %>
+        <%= f.label :header, 'Заголовок' %>
         <%= f.text_field :header, :class => 'span12' %>
-        <%= f.label :main_text %>
+        <%= f.label :main_text, "Текст статьи" %>
         <%= f.text_area :main_text, :class => 'span12', :style => 'height:250px;' %>
-        <%= f.label :preview %>
+        <%= f.label :preview, "Аннотация" %>
         <%= f.text_area :preview, :class => 'span12', :style => 'height: 100px;' %>
       </div>
       <div class="span3">
-        <%= f.label :tag_id %>
+        <%= f.label :tag_id, "Раздел" %>
         <%= f.select :tag_id, options_for_select(Tag.all.collect{ |x| [I18n.t("activerecord.attributes.tag.#{x.name}"), x.id] }) %><br/>
-        <%= f.label :img_url %>
+        <%= f.label :img_url, "Ссылка на изображение" %>
         <%= f.text_field :img_url %><br/>
-        <%= f.submit 'Create', :class => 'btn btn-primary' %>
+        <%= f.submit 'Сохранить', :class => 'btn btn-primary' %>
         <% if @article.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>

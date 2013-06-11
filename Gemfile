@@ -4,10 +4,10 @@ gem 'rails', '3.2.13'
 
 
 gem 'devise'
-gem 'sqlite3'
+# gem 'sqlite3'
 gem 'carrierwave'
 gem "fog"
-# gem 'pg'
+gem 'pg'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

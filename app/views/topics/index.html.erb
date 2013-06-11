@@ -1,11 +1,11 @@
 <div class="well">
-  <h3>Topics list</h3>
+  <h3>Форум</h3>
 
   <table width="100%" class="table-bordered table">
     <tr>
-      <th class="span5">Name</th>
-      <th class="span1">Tag</th>
-      <th class="span1">User</th>
+      <th class="span5">Название</th>
+      <th class="span1">Раздел</th>
+      <th class="span1">Автор</th>
       <th class="span2">Создана</th>
       <th class='span1'>Сообщений</th>
       <th class="span2"></th>
@@ -36,7 +36,6 @@
   </table>
 <% if current_user %>
   <br />
-
-  <%= link_to 'New Topic', new_topic_path, :class => 'btn' %>
+  <%= link_to 'Создать тему', new_topic_path, :class => 'btn' %>
 <% end %>
 </div>

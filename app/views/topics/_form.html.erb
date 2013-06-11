@@ -12,19 +12,19 @@
   <% end %>
   <div class="row-fluid">
     <div class="span3">
-      <%= f.label :name %>
+      <%= f.label :name, "Тема" %>
       <%= f.text_field :name %><br />
-      <%= f.label :tag%>
+      <%= f.label :tag, "Раздел" %>
       <%= f.select :tag, options_for_select(['Учеба', 'Студентческая жизнь', "Разное"]) %>
       <%= f.hidden_field :user_id, :value => current_user.id %><br />
     </div>
     <div class="span8">
-      <%= f.label :body %>
+      <%= f.label :body, "Описание" %>
       <%= f.text_area :body, :style => 'width:100%;height:200px;' %><br />
     </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Создать тему" %>
   </div>
 <% end %>

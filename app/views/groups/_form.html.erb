@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, "Название группы" %>
     <%= f.text_field :name %><br />
   </div>
   <div class="field">
-    <%= f.label :course %>
+    <%= f.label :course, "Курс" %>
     <%= f.number_field :course %><br />
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Сохранить" %>
   </div>
 <% end %>
