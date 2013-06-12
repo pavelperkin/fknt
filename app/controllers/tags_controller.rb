@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def decanat
     @tag = Tag.find_by_name('decanat');
     @articles = Article.where(:tag_id => @tag.id)    

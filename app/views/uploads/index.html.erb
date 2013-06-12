@@ -1,4 +1,4 @@
-<% if current_user && current_user.teacher%>
+<% if current_user.teacher%>
   <%= link_to 'Загрузить файл', new_upload_path, :class => 'btn btn-primary pull-right' %>
 <br/><br/>
 <% end %>
@@ -6,9 +6,14 @@
 <div class="accordion" id="accordion2" style="background-color:#fff;">
   <% @users.each do |user| %>
     <div class="accordion-group">
-      <div class="accordion-heading">
+      <div class="row-fluid accordion-heading">
+        <div class="span3">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
         <%= "#{user.surname} #{user.name} #{user.patronymic} #{user.department}" %></a>
+        </div>
+        <div class="span2">
+          <%= link_to 'Профиль', user, :style => 'line-height: 33px;' %>
+        </div>
       </div>
       <div id="collapseOne" class="accordion-body collapse">
         <div class="accordion-inner">

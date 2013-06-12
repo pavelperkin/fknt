@@ -18,7 +18,7 @@
 	<div class="btn-group">
 	  <%= link_to '← Предыдущая статья', (Article.find(@article.id-1) if @article.id > Article.first.id), :class => 'btn' %>
 	  <%= link_to 'Следующая статья →', (Article.find(@article.id+1) if @article.id < Article.last.id), :class => 'btn' %>
-	  <%if current_user && (current_user.admin || current_user.teacher)%>
+	  <%if current_user.admin || current_user.teacher %>
 	    <%= link_to 'Редактировать', edit_article_path(@article), :class => 'btn' %>
 	  <% end %>  
 	  <%= link_to 'На главную', articles_path, :class => 'btn' %>

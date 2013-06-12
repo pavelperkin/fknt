@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_user!
+  
   before_filter :admin_only, :except => [:show, :index]
 
   def index

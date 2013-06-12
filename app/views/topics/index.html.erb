@@ -22,7 +22,7 @@
         <%= link_to topic, :class => 'btn btn-info' do %>
           <i class="icon-search"></i>
         <% end %>
-        <% if current_user %>
+        <% if current_user.id == topic.user_id %>
           <%= link_to edit_topic_path(topic), :class => 'btn btn-warning' do %>
             <i class="icon-pencil"></i>
           <% end %>

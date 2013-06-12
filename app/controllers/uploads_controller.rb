@@ -1,5 +1,5 @@
 class UploadsController < ApplicationController
-  before_filter :authenticate_user!, :except => :index
+  before_filter :authenticate_user!
 
   def index
     @users = User.where(:teacher => true) 
@@ -12,7 +12,7 @@ class UploadsController < ApplicationController
   def create
     @upload = Upload.new(params[:upload])
     @upload.save
-    redirect_to uploads_url, notice: 'Upload was successfully created.'    
+    redirect_to new_upload_path, notice: 'Upload was successfully created.'    
   end
   
   def destroy

@@ -1,4 +1,11 @@
 <div class="well">
+	<div class='pull-right'>
+	  <% if @user.id == current_user.id %>
+	  	<span class='label label-fresh'>
+	  	  <%= link_to 'Редактировать', edit_user_path(@user), :style => 'color: white;' %>
+	    </span>
+  	  <% end %>
+	</div>
 	<h3><%= @user.surname %> <%= @user.name %> <%= @user.patronymic %> <small class="mute"><i>(<%= link_to Group.find(@user.group_id).name, Group.find(@user.group_id) %>)</i></small></h3>
 	<div class="row-fluid">
 		<div class="thumbnail span3"><%= image_tag @user.avatar %></div>

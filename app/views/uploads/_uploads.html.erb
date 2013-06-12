@@ -4,6 +4,7 @@
       <tr>
   	    <th>Имя файла</th>
   	    <th>Предмет</th>
+        <th>Комментарий</th>
   	    <th>Добавлен</th>
   	    <th></th>
       </tr>
@@ -11,6 +12,7 @@
   	    <tr>
   	      <td><%= upload.filename %></td>	
   	      <td><%= upload.subject  %></td>	
+          <td><%= upload.comment  %></td>
   	      <td><%=l upload.updated_at.to_date %></td>	
   	      <td><%= link_to 'Скачать', upload.file.to_s %></td>	
   	    </tr>	

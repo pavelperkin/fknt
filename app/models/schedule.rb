@@ -10,4 +10,7 @@ class Schedule < ActiveRecord::Base
   def max_two_shedules_for_one_group
     errors.add(:group, "can't have more than two schedules") if Schedule.where(:group_id => self.group_id).count == 2 
   end
+
+  def self.today_schedule
+  end
 end

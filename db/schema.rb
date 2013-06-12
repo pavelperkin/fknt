@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20130609090718) do
     t.string   "filename"
     t.integer  "user_id"
     t.string   "subject"
+    t.string   "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "file"

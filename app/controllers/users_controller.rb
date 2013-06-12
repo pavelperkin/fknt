@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  before_filter :authenticate_user!, :except => [:new, :create]  
   before_filter :can_edit_only_his_profile, :only => [:edit, :update]
 
   def index
