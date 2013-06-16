@@ -27,6 +27,18 @@
       <div class="navbar-inner">
         <div class="container">
           <%= link_to 'fknt.info', root_url, :class => 'brand' %>
+          <ul class="nav">
+            <li><%= link_to "Вакансии", vacancies_path %></li>
+            <li><%= link_to 'О факультете', faculty_path %></li>
+          </ul>  
+          <div class="pull-right">
+            <ul class='nav'>
+              <li><%= link_to image_tag("icons/facebook.png", :size => "20x20", :alt => "facebook"), 'https://www.facebook.com/fkntinfo' %></li>
+              <li><%= link_to image_tag("icons/vkontakte.png", :size => "20x20", :alt => "vkontakte"), 'http://vk.com/id212716977' %></li>
+              <li>
+                <%= link_to image_tag("icons/fknt.jpg", :size => "20x20", :alt => "vkontakte"), 'http://cs.donntu.edu.ua/' %></li>  
+            </ul>
+          </div>
         </div>
       </div>
     </div>

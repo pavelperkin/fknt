@@ -20,10 +20,15 @@
     <%= f.label :subject, "Предмет" %>
     <%= f.text_field :subject %><br />
   </div>
+  <h4>Загрузите файл</h4>
   <div class="field">
-    <%= f.label :file, "Файл" %>
     <%= f.file_field :file %><br /><br />
   </div>  
+  <h4>или добавьте ссылку.</h4>
+  <div class="field">
+    <%= f.label :url, "Ссылка на файл" %>
+    <%= f.text_field :url %><br /><br />
+  </div>
   <div class="field">
     <%= f.label :comment, "Комментарий" %>
     <%= f.text_field :comment %><br /><br />

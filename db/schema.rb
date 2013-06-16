@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20130609090718) do
     t.integer  "user_id"
     t.string   "subject"
     t.string   "comment"
+    t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "file"

@@ -14,7 +14,7 @@
   	      <td><%= upload.subject  %></td>	
           <td><%= upload.comment  %></td>
   	      <td><%=l upload.updated_at.to_date %></td>	
-  	      <td><%= link_to 'Скачать', upload.file.to_s %></td>	
+  	      <td><%= link_to 'Скачать', (upload.url || upload.file.to_s) %></td>	
   	    </tr>	
       <% end %>
     </table>	
