@@ -48,7 +48,9 @@ class UsersController < ApplicationController
   protected
 
   def can_edit_only_his_profile
-    redirect_to root_path if current_user.id != params[:id].to_i
+    if !current_user.admin
+      redirect_to root_path if current_user.id != params[:id].to_i
+    end
   end
 
   def admin_only
