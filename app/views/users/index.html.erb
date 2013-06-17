@@ -1,15 +1,25 @@
 <div class="well users-list">
-	<table>
+	<table class='table table-stripped'>
 	  <tr>
-	    <th>#</th>
+	  	<th>id</th>
 	    <th>ФИО</th>
 	    <th>Группа</th>
+	    <th>Admin</th>
+	    <th>Преподаватель</th>
+	    <th>Староста</th>
+	    <th></th>
 	  </tr>
-	  <% @users.sort_by(&:group_id).each_with_index do |user, index| %>
+	  <% @users.each do |user| %>
 	    <tr>
-		  <td><%= index+1 %></td>
+	      <%= form_for user, :remote => true do |f| %>
+	      <th><%= user.id%></th>	
 		  <td><%= user.surname%> <%= user.name%> <%= user.patronymic%></td>
-		  <td><%= Group.find(user.group_id).name if !user.teacher %></td>
+		  <td><%= Group.find(user.group_id).name %></td>
+		  <td><%= f.check_box :admin %></td>
+		  <td><%= f.check_box :teacher %></td>
+		  <td><%= f.check_box :praepostor %></td>
+		  <td><%= f.submit '↵' %></td>
+		  <% end %>
 	    </tr>
 	  <% end %>
 	</table>

@@ -1,0 +1,67 @@
+<div class="well">
+	<div class='pull-right'>
+	  <% if @user.id == current_user.id %>
+	  	<span class='label label-fresh'>
+	  	  <%= link_to 'Редактировать', edit_user_path(@user), :style => 'color: white;' %>
+	    </span>
+  	  <% end %>
+	</div>
+	<h3><%= @user.surname %> <%= @user.name %> <%= @user.patronymic %> <small class="mute"><i>(<%= link_to Group.find(@user.group_id).name, Group.find(@user.group_id) %>)</i></small></h3>
+	<div class="row-fluid">
+		<div class="thumbnail span3"><%= image_tag @user.avatar %></div>
+		<div class="span9">
+			<i>
+				...also known as <b><%= @user.nickname %></b>.<br/>
+				<%= @user.gender %>, <%=l @user.birthday.to_date %>
+				<% if @user.praepostor %>
+				  <br/>
+				  <span class="label label-important">Староста</span>
+				<% end %>  
+			</i>
+			<hr/>
+			<%= @user.about_me %>
+			<hr/>
+			<h4>Контакты:</h4>
+			<ul>
+				<li>E-Mail: <%= mail_to @user.email %></li>
+				<% if !@user.skype_nickname.empty? %>
+				  <li>Skype: <%= @user.skype_nickname %></li>
+				<% end %>  
+			</ul>
+			<br/>
+			<h4>Соцсети:</h4>
+			<% if !@user.facebook_url.empty? %>
+			<%= link_to image_tag("icons/facebook.png", :size => "32x32", :alt => "facebook", :class => 'social_link'), @user.facebook_url %>
+			<% end %>
+			<% if !@user.vk_url.empty? %>
+			<%= link_to image_tag("icons/vkontakte.png", :size => "32x32", :alt => "vkontakte", :class => 'social_link'), @user.vk_url %>
+			<% end %>
+			<% if !@user.twitter_url.empty? %>
+			<%= link_to image_tag("icons/twitter.png", :size => "32x32", :alt => "twitter", :class => 'social_link'), @user.twitter_url %>
+			<% end %>
+			<% if !@user.google_plus_url.empty? %>
+			<%= link_to image_tag("icons/google-plus.png", :size => "32x32", :alt => "google plus", :class => 'social_link'), @user.google_plus_url %>
+			<% end %>
+			<% if !@user.linked_in_url.empty? %>
+			<%= link_to image_tag("icons/linkedin.png", :size => "32x32", :alt => "linked in", :class => 'social_link'), @user.linked_in_url if @user.linked_in_url %>
+			<% end %>
+			<% if !@user.github_nickname.empty? %>
+			<%= link_to image_tag("icons/github.png", :size => "32x32", :alt => "github", :class => 'social_link'), @user.github_nickname %>
+			<% end %>
+			<% if !@user.github_nickname.empty? %>
+			<%= link_to image_tag("icons/aboutme.png", :size => "32x32", :alt => "about.me", :class => 'social_link'), @user.about_me_nickname %>
+			<% end %>
+			<br/><br/>
+			<h4>Еще ссылки:</h4>
+			<ul>
+				<% if !@user.cv_url.empty? %>
+				  <li>Резюме: <%= link_to "Просмотреть", @user.cv_url %></li>
+				<% end %>
+				<% if !@user.donntu_masters_url.empty? %>
+				  <li>Сайт на портале магистров: <%= link_to "#{@user.surname} #{@user.name}", @user.donntu_masters_url %></li>
+				<% end %>  
+			</ul>
+		</div>
+	</div>
+</div>
+

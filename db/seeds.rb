@@ -8,3 +8,5 @@
 Tag.create([{name: 'trade_union'},{name: 'self_government'},{name: 'decanat'}])
 ScheduleType.create([{name: 'up'},{name: 'down'}])
 Group.create({name: '', course: 0})
+Schedule.create({schedule_type_id: 1, group_id: 1})
+Schedule.create({schedule_type_id: 2, group_id: 1})

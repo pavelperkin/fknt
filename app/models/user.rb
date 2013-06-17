@@ -16,10 +16,5 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   validates :email, presence: true
-  validates :surname, presence: true
-  validates :patronymic, presence: true
-  validates :birthday, presence: true
-  validates :gender, presence: true
-  validates :group_id, presence: true
-  validates :name, presence: true
+  validates :nickname, uniqueness: true
 end

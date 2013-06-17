@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:new, :create]  
   before_filter :can_edit_only_his_profile, :only => [:edit, :update]
+  before_filter :admin_only, :only => :index
+
+  respond_to :html, :js
 
   def index
     @users = User.all
@@ -31,13 +34,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
-    end
+    @user.update_attributes(params[:user])
   end
 
   def destroy
@@ -51,6 +48,10 @@ class UsersController < ApplicationController
   protected
 
   def can_edit_only_his_profile
-    redirect_to users_path if current_user.id != params[:id].to_i
+    redirect_to root_path if current_user.id != params[:id].to_i
+  end
+
+  def admin_only
+    redirect_to root_path if !current_user.admin
   end
 end
