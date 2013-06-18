@@ -1,7 +1,9 @@
 <div class="row-fluid" style='margin: -20px 0; '>
   <div class="span6">
     <% if current_user %>
+      <div style='font-size: 11px'>
       <%= render 'schedules/group_schedule', :schedule => Group.find(current_user.group_id).schedules.first %>
+      </div>
     <% else %>
       <%= render 'hello_user' %>
     <% end %>

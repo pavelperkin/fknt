@@ -5,5 +5,4 @@ class Article < ActiveRecord::Base
   validates :main_text, presence: true
   validates :preview, presence: true
   validates :tag_id, presence: true
-  validates :preview, length: {minimum: 10, maximum: 250}
 end
