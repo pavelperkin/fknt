@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    data = {}  // clean data  
+    data['website']= 'facebook' 
+    $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/websites/get_banner/",
+            data: data,    
+            async:false,  
+            success: function(msg){   //callback
+              $('#banner').html("<a onclick='incClicks()'><img></a>");
+              $('#banner a').attr("href", msg.data.link_url);
+              $('#banner img').attr("src", msg.data.img_url);
+              $('#banner img').attr("banner_id", msg.data.id);
+            }
+        });
+  });
+
+  function incClicks(){
+  	data = {}
+    data['id']= $('#banner img').attr("banner_id") 
+    $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/banners/inc_clicks/",
+            data: data,    
+            async:false,  
+            success: function(msg){}
+        });
+  }
+
+  </script>
+
+</head>
+
+<body>
+  <div id='banner'></div>
+</body>
+</html>
