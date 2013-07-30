@@ -8,7 +8,7 @@ gem 'devise'
 gem 'carrierwave'
 gem "fog"
 gem 'pg'
-
+gem 'newrelic_rpm'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
